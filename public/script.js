@@ -13,11 +13,14 @@ document.getElementById("crm-form").addEventListener("submit", function (e) {
 
   if (!smartcommTab || smartcommTab.closed) {
     smartcommTab = window.open(smartcommUrl, "_blank");
+    console.log("hh")
   } else {
     smartcommTab.focus();
+    console.log("kk")
   }
 
   setTimeout(() => {
+    console.log(phone, "ll")
     smartcommTab.postMessage({ phoneNumber: phone }, "http://localhost:3000");
   }, 1000);
 });
